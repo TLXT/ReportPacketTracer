@@ -1,0 +1,532 @@
+\documentclass[a4paper,12pt]{article}
+
+
+% --- Cấu hình gói ngôn ngữ và font ---
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+
+\usepackage{mathptmx}
+\usepackage{tabularx}
+\usepackage{amssymb}
+
+% --- Cấu hình lề ---
+\usepackage[left=2.5cm, right=2cm, top=2cm, bottom=2cm]{geometry}
+
+% --- Gói hình ảnh, màu sắc, bảng ---
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+
+% --- Gói hiển thị code ---
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage[font=small,labelfont=bf,labelsep=colon]{caption}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+% --- Gói liên kết ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Bao Cao Do An Mang May Tinh},
+}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small \textbf{Báo cáo Đồ Án Môn Học}}
+\rhead {\small \textit{Trường Đại học Khoa học tự nhiên, ĐHQG-HCM - Khoa CNTT}}
+\lfoot{\small \textit{By: 24120136 - 24120157 - 24120394}}
+\rfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\usepackage{titlesec}
+% Mục lớn (Section): Chữ to, in đậm, màu xanh dương đậm
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{blue!70!black}}{\thesection}{1em}{}
+% Mục nhỏ (Subsection): In đậm, màu đen
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% ===================================================
+% BẮT ĐẦU VĂN BẢN
+% ===================================================
+\begin{document}
+
+% --- CHÈN ĐOẠN ĐỔI TÊN TẠI ĐÂY (SAU \begin{document}) ---
+% Cách này sẽ ép buộc LaTeX đổi tên ngay lập tức
+\renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listfigurename}{Danh mục hình ảnh}
+\renewcommand{\listtablename}{Danh mục bảng biểu}
+\renewcommand{\figurename}{Hình}
+\renewcommand{\tablename}{Bảng}
+\renewcommand{\refname}{Tài liệu tham khảo}
+% --------------------------------------------------------
+
+% ====================================================================
+% TRANG BÌA
+% ====================================================================
+\begin{titlepage}
+    \centering
+    \textbf{\large ĐẠI HỌC QUỐC GIA TP.HCM}\\
+    \textbf{\large TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN}\\
+    \textbf{\large KHOA CÔNG NGHỆ THÔNG TIN}\\
+    \textbf{\large NHÓM NGÀNH MÁY TÍNH VÀ CÔNG NGHỆ THÔNG TIN}
+    
+    \vspace{2cm}
+    
+    \includegraphics[width=0.4\textwidth]{logo_khtn.png} % Thay 'logo_khtn.png' bằng tên file ảnh logo của bạn
+    
+    \vspace{2cm}
+    
+    {\bfseries \LARGE BÁO CÁO ĐỒ ÁN MÔN HỌC \par}
+    \vspace{0.5cm}
+    {\bfseries \Large MÔN: MẠNG MÁY TÍNH \par}
+    \vspace{0.5cm}
+    {\bfseries \Large ĐỀ TÀI: PACKET TRACER \par}
+    
+    \vspace{2cm}
+
+\vspace{1cm} % Khoảng cách giữa tiêu đề và danh sách
+
+\noindent % Không thụt đầu dòng
+\begin{minipage}[t]{0.6\textwidth} % Cột trái chiếm 60% chiều rộng
+    \textit{Sinh viên thực hiện:} \\[6pt] % In nghiêng dòng tiêu đề
+    Nguyễn Đặng Khôi Nguyên (24120394) \\[4pt]
+    Lê Thái Vinh (24120157) \\[4pt]
+    Trần Lê Xuân Tân (24120136)
+\end{minipage}%
+\hfill % Đẩy cột phải sang phía bên phải
+\begin{minipage}[t]{0.35\textwidth} % Cột phải chiếm 35% chiều rộng
+    \raggedleft % Căn lề phải cho nội dung trong cột này
+    \textit{Giáo viên hướng dẫn:} \\[6pt]
+    Lê Hà Minh
+\end{minipage}
+    
+    
+
+    \vfill
+    
+    {\large Tp. Hồ Chí Minh, tháng 12 năm 2025}
+\end{titlepage}
+
+% ====================================================================
+% MỤC LỤC
+% ====================================================================
+\newpage
+\tableofcontents
+\listoffigures % Tạo danh sách hình ảnh
+\newpage
+
+% ====================================================================
+% NỘI DUNG CHÍNH
+% ====================================================================
+
+\section{THÔNG TIN NHÓM}
+
+\subsection{Giới thiệu thành viên nhóm}
+
+\begin{table}[h]
+        \centering
+        \begin{tabular}{|c|l|c|l|c|l}
+        \hline
+        \textbf{MSSV} & \textbf{Họ và Tên} & \textbf{Địa chỉ email} & \textbf{Ghi chú} \\
+        \hline
+        24120394 & Nguyễn Đặng Khôi Nguyên & 24120394@student.hcmus.edu.vn & \\
+        \hline
+        24120136 & Trần Lê Xuân Tân & 24120136@student.hcmus.edu.vn & \\
+        \hline
+        23120157 & Lê Thái Vinh & 24120157@student.hcmus.edu.vn & \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+\subsection{Mục tiêu đồ án}
+\begin{itemize}
+    \item Thiết kế và triển khai hệ thống mạng đa tầng cho doanh nghiệp sử dụng Cisco Packet Tracer.
+    \item Thành thạo cấu hình định tuyến tĩnh (Static Route) và định tuyến động (RIPv2).
+    \item Triển khai các dịch vụ mạng thiết yếu: DHCP Server, DNS Server và Web Server.
+    \item Phân tích chi tiết hành vi gói tin qua các tầng OSI trong môi trường giả lập.
+\end{itemize}
+
+\section{ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH}
+
+\subsection{Bảng đánh giá mức độ hoàn thành}
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|l|c|}
+    \hline
+    \textbf{STT} & \textbf{Nội dung thực hiện} & \textbf{Mức độ hoàn thành} \\ \hline
+    1 & Thiết kế Topology và cấu hình IP Part 1 & 100\% \\ \hline
+    2 & Cấu hình Định tuyến tĩnh (Static Routing) & 100\% \\ \hline
+    3 & Chia mạng con và cấu hình DHCP Relay Agent & 100\% \\ \hline
+    4 & Triển khai DNS và Web Server & 100\% \\ \hline
+    5 & Định tuyến động RIPv2 thông suốt toàn mạng & 100\% \\ \hline
+    \end{tabular}
+\end{table}
+
+\subsection{Số điểm mong đợi}
+Nhóm mong muốn đạt điểm tuyệt đối cho đồ án này dựa trên việc hoàn thành tất cả các yêu cầu kỹ thuật và phân tích gói tin chi tiết.
+
+% --- PART 1 ---
+\section{PART 1: STATIC ROUTING AND PACKET ANALYSIS}
+
+\subsection{Phần chuẩn bị (Cấu hình hệ thống)}
+Trong phần này, nhóm đã cấu hình IP tĩnh cho các thiết bị đầu cuối và thiết lập các câu lệnh định tuyến tĩnh trên các Router.
+\begin{itemize}
+    \item \textbf{Cấu hình IP:} PC1 ($192.168.1.10$), PC2 ($192.168.2.10$), PC3 ($192.168.3.10$).
+    \item \textbf{Định tuyến tĩnh:} Thực hiện lệnh \texttt{ip route} trên các Router để chỉ đường đến các mạng LAN xa.
+\end{itemize}
+
+\textbf{Các bước chi tiết:}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B1.png} 
+    \caption{Chuẩn bị 3 Router và đặt tên lần lượt là R1, R2, R3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B2.png} 
+    \caption{Chuẩn bị thêm 3 Switch và đặt tên lần lượt là S1, S2, S3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B3.png} 
+    \caption{Chuẩn bị thêm 3 PC và đặt tên lần lượt là PC1, PC2, PC3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B4.png} 
+    \caption{Chọn R1 vào Physical chọn HWIC-2T và tắt thiết bị}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B5.png} 
+    \caption{Lắp HWIC-2T vào thiết bị để có thêm 2 cổng Serial High-Speed}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B6.png} 
+    \caption{Turn On Router và chờ vài giây}
+\end{figure}
+
+Tương tự 3 bước trên để lắp HWIC-2T cho R2, R3.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B7.png} 
+    \caption{Bấm biểu tường hình sấm sét để chọn dây đỏ có đồng hồ}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B8.png} 
+    \caption{Bấm vào R1 và chọn cổng Serial0/0/0}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B9.png} 
+    \caption{Bấm tiếp vào R2 và chọn cổng Serial0/0/0 để nối dây}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B10.png} 
+    \caption{Tương tự 2 bước trên nối cổng Serial0/0/1 của R2 với cổng Serial0/0/1 của R3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B11.png} 
+    \caption{Hình ảnh sau khi nối các Router với nhau}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B12.png} 
+    \caption{Bấm vào R1 và chọn cổng GigabitEthernet0/0}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B13.png} 
+    \caption{Bấm tiếp vào S1 và chọn cổng GigabitEthernet0/1 để nối R1 và S1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B14.png} 
+    \caption{Bấm vào S1 và chọn cổng FastEthernet0/2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B15.png} 
+    \caption{Bấm tiếp vào PC1 và chọn cổng FastEthernet0 để nối S1 và PC1}
+\end{figure}
+
+Làm tương tự các bước trên để nối R2-S2-PC2 và R3-S3-PC3.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B16.png} 
+    \caption{Hình ảnh sau khi nối R2-S2-PC2 và R3-S3-PC3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B17.png} 
+    \caption{Bấm vào R1 chọn CLI}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B18.png} 
+    \caption{Nhập các dòng lệnh này vào CLI của R1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B19.png}
+    \includegraphics[width=1\textwidth]{B19.5.png}
+    \caption{Tương tự mở CLI của R2 và nhập các dòng lệnh này vào CLI của R2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B20.png}
+    \caption{Tương tự mở CLI của R3 và nhập các dòng lệnh này vào CLI của R3}
+\end{figure}
+
+Sau khi nhập các dòng lệnh trên thì chúng ta sẽ thấy đường dây nối giữa các Router sẽ đổi từ các mũi tên màu đỏ thành xanh lá.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B21.png}
+    \caption{Quay lại CLI của R1 để nhập thêm các dòng lệnh trên vào}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B22.png}
+    \caption{Quay lại CLI của R2 để nhập thêm các dòng lệnh trên vào}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B23.png}
+    \caption{Quay lại CLI của R3 để nhập thêm các dòng lệnh trên vào}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B24.png}
+    \caption{Hình ảnh sau khi đã nhập hết tất cả các lệnh trên}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B25.png}
+    \caption{Bấm vào PC1 chọn Desktop -> IP Configuration và sửa các IP của PC1 theo yêu cầu đề bài}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B26.png}
+    \caption{Tương tự sửa các địa chỉ IP của PC2 theo yêu cầu đề bài}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B27.png}
+    \caption{Tương tự sửa các địa chỉ IP của PC3 theo yêu cầu đề bài}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B28.png}
+    \caption{Kiểm tra kết nối từ PC1 bằng lệnh ping}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B29.png}
+    \caption{Kiểm tra kết nối từ PC2 bằng lệnh ping}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B30.png}
+    \caption{Kiểm tra kết nối từ PC3 bằng lệnh ping}
+\end{figure}
+
+Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho Part 1. Tiếp theo chúng ta sẽ phân tích hành trình gói tin từ PC1 đến PC3.
+\newpage
+
+
+\subsection{Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow$ PC3)}
+
+\textbf{Phase 1: Gói tin rời LAN nguồn (PC1 $\rightarrow$ R1)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B31.png}
+    \caption{Gói tin ở PC1 trước khi rời đi}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B32.png}
+    \caption{Gói tin khi đến S1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B33.png}
+    \caption{Gói tin khi đến R1}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Địa chỉ IP:} IP nguồn là $192.168.1.10$, IP đích là $192.168.3.10$. Các địa chỉ này không thay đổi trong suốt hành trình.
+    \item \textbf{Xác định MAC đích:} PC1 sử dụng giao thức \textbf{ARP} để tìm địa chỉ MAC của Default Gateway (R1) do đích đến nằm ngoài mạng LAN.
+    \item \textbf{Thông tin Frame:} Khi rời PC1, Source MAC là của PC1 và Destination MAC là địa chỉ vật lý của cổng Gig0/0 trên R1.
+\end{itemize}
+
+\textbf{Phase 2: Chặng đường định tuyến (R1 $\rightarrow$ R2 $\rightarrow$ R3)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B34.png}
+    \caption{Gói tin khi đến R2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B35.png}
+    \caption{Gói tin khi đến R3}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Tại R1:} Router loại bỏ Header Lớp 2 vì nó chỉ có giá trị nội bộ chặng trước. Sau khi tra bảng định tuyến, R1 xác định Next Hop IP là $10.0.12.2$ để đến mạng $192.168.3.10$.
+    \item \textbf{Liên kết R1 - R2 (Serial):} Gói tin được đóng gói lại theo giao thức Serial (HDLC/PPP), không sử dụng địa chỉ MAC định danh vật lý như Ethernet.
+    \item \textbf{Tại R2:} Router thực hiện tra cứu lớp 3. Theo quy tắc giao thức, R2 \textbf{không ghi lại} Source/Destination IP để đảm bảo tính định danh thiết bị cuối. R2 gỡ bỏ header Serial cũ và tạo header mới phù hợp với chặng R2-R3.
+\end{itemize}
+
+\textbf{Phase 3: Gói tin đến LAN đích (R3 $\rightarrow$ PC3)}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B36.png}
+    \caption{Gói tin khi đến S3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B37.png}
+    \caption{Gói tin khi đến PC3}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Giao tiếp thoát:} R3 xác định cổng thoát là Gig0/0 nối trực tiếp với mạng LAN đích.
+    \item \textbf{Khám phá MAC đích:} R3 sử dụng ARP để lấy địa chỉ MAC của PC3 trước khi gửi gói tin xuống Switch.
+    \item \textbf{Thông tin Frame cuối:} Source MAC là của cổng Gig0/0 trên R3 và Destination MAC là địa chỉ của PC3.
+\end{itemize}
+
+Sau khi phân tích hành trình gói tin từ PC1 đến PC3, chúng ta thấy rằng địa chỉ IP nguồn và đích không thay đổi trong suốt quá trình truyền. Tuy nhiên, địa chỉ MAC thay đổi tại mỗi chặng để phù hợp với các liên kết vật lý khác nhau. Các Router thực hiện việc tra cứu bảng định tuyến để xác định Next Hop và đóng gói lại gói tin theo giao thức phù hợp với từng chặng đường.
+
+Và ngoài ra, nhóm cũng đã kiểm tra kết nối ngược lại từ PC3 đến PC1 và kết quả cũng tương tự như trên, đảm bảo tính hai chiều trong việc truyền dữ liệu.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B38.png}
+    \caption{Gói tin đi từ PC3 đến S3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B39.png}
+    \caption{Gói tin đến R3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B40.png}
+    \caption{Gói tin đến R2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B41.png}
+    \caption{Gói tin đến R1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B42.png}
+    \caption{Gói tin đến S1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{B43.png}
+    \caption{Gói tin đến PC1}
+\end{figure}
+
+Ta thấy rằng hành trình gói tin từ PC3 đến PC1 cũng tuân theo các nguyên tắc tương tự như từ PC1 đến PC3, với việc thay đổi địa chỉ MAC tại mỗi chặng và giữ nguyên địa chỉ IP nguồn và đích.
+
+\newpage
+
+\section{PART 2: ENTERPRISE SERVICES AND DHCP RELAY}
+
+\subsection{Phần chuẩn bị (Cấu hình hệ thống)}
+
+\subsection{Trả lời các câu hỏi Lab}
+
+\section{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
+
+\subsection{Kết luận}
+Nhóm đã hoàn thành việc kết nối thông suốt giữa hai phân vùng mạng khác nhau. Các dịch vụ DHCP, DNS và Web hoạt động ổn định, PC ở Phần 1 đã có thể truy cập trang web ở Phần 2 thông qua tên miền.
+
+\subsection{Hạn chế}
+Sử dụng giao thức định tuyến RIPv2 có tốc độ hội tụ chậm và tốn băng thông do gửi bảng định tuyến theo chu kỳ.
+
+\subsection{Hướng phát triển}
+Nâng cấp giao thức định tuyến lên OSPF hoặc EIGRP để tối ưu hóa hiệu năng cho mạng lớn hơn, triển khai thêm Firewall để bảo mật hệ thống Server.
+
+\end{document}

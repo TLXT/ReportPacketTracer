@@ -1,0 +1,17 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {section}{\numberline {1}THÔNG TIN NHÓM}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Giới thiệu thành viên nhóm}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Mục tiêu đồ án}{3}{subsection.1.2}%
+\contentsline {section}{\numberline {2}ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Bảng đánh giá mức độ hoàn thành}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Số điểm mong đợi}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}PART 1: STATIC ROUTING AND PACKET ANALYSIS}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Phần chuẩn bị (Cấu hình hệ thống)}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow $ PC3)}{17}{subsection.3.2}%
+\contentsline {section}{\numberline {4}PART 2: ENTERPRISE SERVICES AND DHCP RELAY}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Phần chuẩn bị (Cấu hình hệ thống)}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Trả lời các câu hỏi Lab}{24}{subsection.4.2}%
+\contentsline {section}{\numberline {5}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{24}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Kết luận}{24}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hạn chế}{24}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Hướng phát triển}{24}{subsection.5.3}%

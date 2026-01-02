@@ -1,0 +1,44 @@
+\babel@toc {vietnamese}{}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Chuẩn bị 3 Router và đặt tên lần lượt là R1, R2, R3}}{4}{figure.caption.3}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Chuẩn bị thêm 3 Switch và đặt tên lần lượt là S1, S2, S3}}{4}{figure.caption.4}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Chuẩn bị thêm 3 PC và đặt tên lần lượt là PC1, PC2, PC3}}{5}{figure.caption.5}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Chọn R1 vào Physical chọn HWIC-2T và tắt thiết bị}}{5}{figure.caption.6}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Lắp HWIC-2T vào thiết bị để có thêm 2 cổng Serial High-Speed}}{6}{figure.caption.7}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Turn On Router và chờ vài giây}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Bấm biểu tường hình sấm sét để chọn dây đỏ có đồng hồ}}{7}{figure.caption.9}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Bấm vào R1 và chọn cổng Serial0/0/0}}{7}{figure.caption.10}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Bấm tiếp vào R2 và chọn cổng Serial0/0/0 để nối dây}}{8}{figure.caption.11}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Tương tự 2 bước trên nối cổng Serial0/0/1 của R2 với cổng Serial0/0/1 của R3}}{8}{figure.caption.12}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Hình ảnh sau khi nối các Router với nhau}}{9}{figure.caption.13}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Bấm vào R1 và chọn cổng GigabitEthernet0/0}}{9}{figure.caption.14}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Bấm tiếp vào S1 và chọn cổng GigabitEthernet0/1 để nối R1 và S1}}{10}{figure.caption.15}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Bấm vào S1 và chọn cổng FastEthernet0/2}}{10}{figure.caption.16}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Bấm tiếp vào PC1 và chọn cổng FastEthernet0 để nối S1 và PC1}}{11}{figure.caption.17}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Hình ảnh sau khi nối R2-S2-PC2 và R3-S3-PC3}}{11}{figure.caption.18}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Bấm vào R1 chọn CLI}}{12}{figure.caption.19}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Nhập các dòng lệnh này vào CLI của R1}}{12}{figure.caption.20}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Tương tự mở CLI của R2 và nhập các dòng lệnh này vào CLI của R2}}{12}{figure.caption.21}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Tương tự mở CLI của R3 và nhập các dòng lệnh này vào CLI của R3}}{12}{figure.caption.22}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Quay lại CLI của R1 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.23}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Quay lại CLI của R2 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.24}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Quay lại CLI của R3 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.25}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Hình ảnh sau khi đã nhập hết tất cả các lệnh trên}}{14}{figure.caption.26}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Bấm vào PC1 chọn Desktop -> IP Configuration và sửa các IP của PC1 theo yêu cầu đề bài}}{14}{figure.caption.27}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Tương tự sửa các địa chỉ IP của PC2 theo yêu cầu đề bài}}{15}{figure.caption.28}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Tương tự sửa các địa chỉ IP của PC3 theo yêu cầu đề bài}}{15}{figure.caption.29}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Kiểm tra kết nối từ PC1 bằng lệnh ping}}{15}{figure.caption.30}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Kiểm tra kết nối từ PC2 bằng lệnh ping}}{16}{figure.caption.31}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Kiểm tra kết nối từ PC3 bằng lệnh ping}}{16}{figure.caption.32}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Gói tin ở PC1 trước khi rời đi}}{17}{figure.caption.33}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Gói tin khi đến S1}}{17}{figure.caption.34}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Gói tin khi đến R1}}{18}{figure.caption.35}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Gói tin khi đến R2}}{18}{figure.caption.36}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Gói tin khi đến R3}}{19}{figure.caption.37}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Gói tin khi đến S3}}{19}{figure.caption.38}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Gói tin khi đến PC3}}{20}{figure.caption.39}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Gói tin đi từ PC3 đến S3}}{21}{figure.caption.40}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Gói tin đến R3}}{21}{figure.caption.41}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Gói tin đến R2}}{22}{figure.caption.42}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Gói tin đến R1}}{22}{figure.caption.43}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Gói tin đến S1}}{23}{figure.caption.44}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Gói tin đến PC1}}{23}{figure.caption.45}%
