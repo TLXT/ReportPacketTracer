@@ -402,7 +402,7 @@ Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho P
 
 \subsection{Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow$ PC3)}
 
-\textbf{Phase 1: Gói tin rời LAN nguồn (PC1 $\rightarrow$ R1)}
+\subsubsection*{Phase 1: Gói tin rời LAN nguồn (PC1 $\rightarrow$ R1)}
 
 \begin{figure}[H]
     \centering
@@ -423,12 +423,17 @@ Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho P
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Địa chỉ IP:} IP nguồn là $192.168.1.10$, IP đích là $192.168.3.10$. Các địa chỉ này không thay đổi trong suốt hành trình.
-    \item \textbf{Xác định MAC đích:} PC1 sử dụng giao thức \textbf{ARP} để tìm địa chỉ MAC của Default Gateway (R1) do đích đến nằm ngoài mạng LAN.
-    \item \textbf{Thông tin Frame:} Khi rời PC1, Source MAC là của PC1 và Destination MAC là địa chỉ vật lý của cổng Gig0/0 trên R1.
+    \item \textbf{Câu hỏi:} Khi gói tin vừa được tạo trên PC1, địa chỉ IP nguồn và IP đích là gì? Những địa chỉ này có thay đổi trong suốt hành trình không?
+    \item \textbf{Trả lời:} Địa chỉ IP nguồn là $192.168.1.10$ và địa chỉ IP đích là $192.168.3.10$. Các địa chỉ này \textbf{không bao giờ thay đổi} trong suốt hành trình truyền tải vì chúng dùng để định danh thiết bị cuối (End-to-End).
+
+    \item \textbf{Câu hỏi:} Làm thế nào PC1 xác định được địa chỉ MAC đích cần thiết để gửi gói tin đến chặng kế tiếp (R1)? Giao thức nào được sử dụng?
+    \item \textbf{Trả lời:} PC1 nhận thấy IP đích nằm ngoài mạng LAN nên nó gửi gói tin đến Default Gateway (R1). PC1 sử dụng giao thức \textbf{ARP (Address Resolution Protocol)} để phân giải địa chỉ IP của cổng Gateway thành địa chỉ MAC tương ứng.
+
+    \item \textbf{Câu hỏi:} Khi gói tin rời PC1 và đi qua Switch (S1), địa chỉ MAC nguồn và MAC đích của khung Ethernet là gì?
+    \item \textbf{Trả lời:} Địa chỉ MAC nguồn là địa chỉ vật lý của PC1 và địa chỉ MAC đích là địa chỉ vật lý của cổng GigabitEthernet0/0 trên Router R1.
 \end{itemize}
 
-\textbf{Phase 2: Chặng đường định tuyến (R1 $\rightarrow$ R2 $\rightarrow$ R3)}
+\subsubsection*{Phase 2: Trải qua lộ trình định tuyến (R1 $\rightarrow$ R2 $\rightarrow$ R3)}
 
 \begin{figure}[H]
     \centering
@@ -443,12 +448,20 @@ Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho P
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Tại R1:} Router loại bỏ Header Lớp 2 vì nó chỉ có giá trị nội bộ chặng trước. Sau khi tra bảng định tuyến, R1 xác định Next Hop IP là $10.0.12.2$ để đến mạng $192.168.3.10$.
-    \item \textbf{Liên kết R1 - R2 (Serial):} Gói tin được đóng gói lại theo giao thức Serial (HDLC/PPP), không sử dụng địa chỉ MAC định danh vật lý như Ethernet.
-    \item \textbf{Tại R2:} Router thực hiện tra cứu lớp 3. Theo quy tắc giao thức, R2 \textbf{không ghi lại} Source/Destination IP để đảm bảo tính định danh thiết bị cuối. R2 gỡ bỏ header Serial cũ và tạo header mới phù hợp với chặng R2-R3.
+    \item \textbf{Câu hỏi:} Khi khung dữ liệu đến R1, điều gì xảy ra với địa chỉ MAC đích? Tại sao Router lại hủy bỏ tiêu đề khung ban đầu? Địa chỉ Next Hop IP để đến $192.168.3.10$ là gì?
+    \item \textbf{Trả lời:} R1 sẽ \textbf{gỡ bỏ (discard)} tiêu đề khung Ethernet cũ vì thông tin Lớp 2 chỉ có giá trị nội bộ trong một chặng đơn lẻ. Router cần đọc gói tin ở Lớp 3 để thực hiện định tuyến. Địa chỉ \textbf{Next Hop IP} để đi tiếp là $10.0.12.2$ (cổng Serial của R2).
+
+    \item \textbf{Câu hỏi:} Liên kết R1 đến R2 (Serial): Địa chỉ MAC nguồn và MAC đích trong khung mới do R1 tạo ra là gì?
+    \item \textbf{Trả lời:} Vì đây là liên kết Serial điểm-đến-điểm, nó không sử dụng địa chỉ MAC như Ethernet. R1 đóng gói gói tin bằng tiêu đề Serial (như HDLC hoặc PPP) thay thế cho Ethernet frame.
+
+    \item \textbf{Câu hỏi:} Khi gói tin đến R2, Router này có ghi lại địa chỉ IP nguồn/đích không? Giải thích theo quy tắc Lớp 3.
+    \item \textbf{Trả lời:} R2 \textbf{không} ghi lại IP nguồn hay IP đích. Theo quy tắc Layer 3, địa chỉ IP phải được giữ nguyên từ nguồn đến đích để đảm bảo gói tin đến đúng nơi và thiết bị đích có thể phản hồi lại đúng địa chỉ nguồn.
+
+    \item \textbf{Câu hỏi:} R2 làm gì với tiêu đề Lớp 2 trước khi gửi đến R3? Khung mới của R2 so với R1 như thế nào?
+    \item \textbf{Trả lời:} R2 gỡ bỏ tiêu đề Lớp 2 nhận được từ R1 và tạo ra một tiêu đề Lớp 2 mới cho chặng R2-R3. Khung mới này có cấu trúc tương tự khung của R1 vì cả hai chặng đều sử dụng công nghệ truyền dẫn Serial.
 \end{itemize}
 
-\textbf{Phase 3: Gói tin đến LAN đích (R3 $\rightarrow$ PC3)}
+\subsubsection*{Phase 3: Gói tin đến LAN đích (R3 $\rightarrow$ PC3)}
 
 \begin{figure}[H]
     \centering
@@ -463,9 +476,14 @@ Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho P
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Giao tiếp thoát:} R3 xác định cổng thoát là Gig0/0 nối trực tiếp với mạng LAN đích.
-    \item \textbf{Khám phá MAC đích:} R3 sử dụng ARP để lấy địa chỉ MAC của PC3 trước khi gửi gói tin xuống Switch.
-    \item \textbf{Thông tin Frame cuối:} Source MAC là của cổng Gig0/0 trên R3 và Destination MAC là địa chỉ của PC3.
+    \item \textbf{Câu hỏi:} Khi gói tin đến R3, giao tiếp nào được xác định là cổng thoát cho địa chỉ $192.168.3.10$?
+    \item \textbf{Trả lời:} R3 xác định cổng thoát là \textbf{GigabitEthernet0/0}, giao tiếp kết nối trực tiếp với mạng LAN của PC3.
+
+    \item \textbf{Câu hỏi:} Trước khi gửi đến PC3, R3 phải khám phá địa chỉ nào và bằng cách nào?
+    \item \textbf{Trả lời:} R3 phải khám phá địa chỉ \textbf{MAC vật lý của PC3}. Nó thực hiện việc này bằng cách gửi một gói tin \textbf{ARP Request} xuống mạng LAN.
+
+    \item \textbf{Câu hỏi:} Địa chỉ MAC nguồn và MAC đích khi khung dữ liệu rời cổng LAN của R3 đến PC3 là gì?
+    \item \textbf{Trả lời:} Địa chỉ MAC nguồn là địa chỉ vật lý cổng Gig0/0 của Router R3 và địa chỉ MAC đích là địa chỉ vật lý của PC3.
 \end{itemize}
 
 Sau khi phân tích hành trình gói tin từ PC1 đến PC3, chúng ta thấy rằng địa chỉ IP nguồn và đích không thay đổi trong suốt quá trình truyền. Tuy nhiên, địa chỉ MAC thay đổi tại mỗi chặng để phù hợp với các liên kết vật lý khác nhau. Các Router thực hiện việc tra cứu bảng định tuyến để xác định Next Hop và đóng gói lại gói tin theo giao thức phù hợp với từng chặng đường.

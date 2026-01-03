@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.2)  2 JAN 2026 22:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.1.2)  3 JAN 2026 21:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/test/test.tex
-(d:/test/test.tex
+**"d:/OOP/PROJECT SVG/ReportPacketTracer/test.tex"
+(d:/OOP/PROJECT SVG/ReportPacketTracer/test.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
 (C:\Users\User\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
@@ -1100,12 +1100,21 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 <B34.png, id=323, 1444.64719pt x 764.8575pt>
 File: B34.png Graphic file (type png)
 <use B34.png>
-Package pdftex.def Info: B34.png  used on input line 435.
+Package pdftex.def Info: B34.png  used on input line 440.
 (pdftex.def)             Requested size: 469.47049pt x 248.5524pt.
-<B35.png, id=324, 1444.64719pt x 766.36313pt>
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.14854pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.14854pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
+
+[18 <./B33.png>]
+<B35.png, id=330, 1444.64719pt x 766.36313pt>
 File: B35.png Graphic file (type png)
 <use B35.png>
-Package pdftex.def Info: B35.png  used on input line 441.
+Package pdftex.def Info: B35.png  used on input line 446.
 (pdftex.def)             Requested size: 469.47049pt x 249.04167pt.
 
 
@@ -1115,35 +1124,35 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[18 <./B33.png> <./B34.png>]
-Overfull \hbox (31.86414pt too wide) in paragraph at lines 448--449
-[]\T5/ptm/b/n/12 T¤i R2: \T5/ptm/m/n/12 Router thüc hi»n tra cùu lîp 3. Theo quy t­c giao thùc, R2 \T5/ptm/b/n/12 khæng ghi l¤i \T5/ptm/m/n/12 Source/Destination
- []
-
-<B36.png, id=332, 1444.64719pt x 767.86874pt>
+[19 <./B34.png> <./B35.png>]
+<B36.png, id=337, 1444.64719pt x 767.86874pt>
 File: B36.png Graphic file (type png)
 <use B36.png>
-Package pdftex.def Info: B36.png  used on input line 455.
+Package pdftex.def Info: B36.png  used on input line 468.
 (pdftex.def)             Requested size: 469.47049pt x 249.53094pt.
-<B37.png, id=333, 1444.64719pt x 769.37437pt>
+<B37.png, id=338, 1444.64719pt x 769.37437pt>
 File: B37.png Graphic file (type png)
 <use B37.png>
-Package pdftex.def Info: B37.png  used on input line 461.
+Package pdftex.def Info: B37.png  used on input line 474.
 (pdftex.def)             Requested size: 469.47049pt x 250.02023pt.
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.14854pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.14854pt}.
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[19 <./B35.png> <./B36.png>]
-<B38.png, id=340, 1444.64719pt x 767.86874pt>
+[20 <./B36.png>]
+Overfull \hbox (13.51576pt too wide) in paragraph at lines 479--480
+[]\T5/ptm/b/n/12 C¥u häi: \T5/ptm/m/n/12 Khi gâi tin ^^_¸n R3, giao ti¸p n o ^^_÷ñc x¡c ^^_ành l  cêng tho¡t cho ^^_àa ch¿ $\OT1/ztmcm/m/n/12 192\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 168\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 3\OML/ztmcm/m/it/12 :\OT1/ztmcm/m/n/12 10$\T5/ptm/m/n/12 ? 
+ []
+
+<B38.png, id=344, 1444.64719pt x 767.86874pt>
 File: B38.png Graphic file (type png)
 <use B38.png>
-Package pdftex.def Info: B38.png  used on input line 477.
+Package pdftex.def Info: B38.png  used on input line 495.
 (pdftex.def)             Requested size: 469.47049pt x 249.53094pt.
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.14854pt, for example:
@@ -1151,16 +1160,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[20 <./B37.png>]
-<B39.png, id=346, 1444.64719pt x 767.11594pt>
+[21 <./B37.png>]
+<B39.png, id=350, 1444.64719pt x 767.11594pt>
 File: B39.png Graphic file (type png)
 <use B39.png>
-Package pdftex.def Info: B39.png  used on input line 483.
+Package pdftex.def Info: B39.png  used on input line 501.
 (pdftex.def)             Requested size: 469.47049pt x 249.28632pt.
-<B40.png, id=347, 1444.64719pt x 767.86874pt>
+<B40.png, id=351, 1444.64719pt x 767.86874pt>
 File: B40.png Graphic file (type png)
 <use B40.png>
-Package pdftex.def Info: B40.png  used on input line 489.
+Package pdftex.def Info: B40.png  used on input line 507.
 (pdftex.def)             Requested size: 469.47049pt x 249.53094pt.
 
 
@@ -1170,16 +1179,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[21 <./B38.png> <./B39.png>]
-<B41.png, id=354, 1444.64719pt x 767.11594pt>
+[22 <./B38.png> <./B39.png>]
+<B41.png, id=358, 1444.64719pt x 767.11594pt>
 File: B41.png Graphic file (type png)
 <use B41.png>
-Package pdftex.def Info: B41.png  used on input line 495.
+Package pdftex.def Info: B41.png  used on input line 513.
 (pdftex.def)             Requested size: 469.47049pt x 249.28632pt.
-<B42.png, id=355, 1444.64719pt x 767.11594pt>
+<B42.png, id=359, 1444.64719pt x 767.11594pt>
 File: B42.png Graphic file (type png)
 <use B42.png>
-Package pdftex.def Info: B42.png  used on input line 501.
+Package pdftex.def Info: B42.png  used on input line 519.
 (pdftex.def)             Requested size: 469.47049pt x 249.28632pt.
 
 
@@ -1189,11 +1198,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[22 <./B40.png> <./B41.png>]
-<B43.png, id=362, 1444.64719pt x 767.86874pt>
+[23 <./B40.png> <./B41.png>]
+<B43.png, id=366, 1444.64719pt x 767.86874pt>
 File: B43.png Graphic file (type png)
 <use B43.png>
-Package pdftex.def Info: B43.png  used on input line 507.
+Package pdftex.def Info: B43.png  used on input line 525.
 (pdftex.def)             Requested size: 469.47049pt x 249.53094pt.
 
 
@@ -1203,7 +1212,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[23 <./B42.png> <./B43.png>]
+[24 <./B42.png> <./B43.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.14854pt, for example:
@@ -1211,7 +1220,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.14854pt}.
 
-[24] (test.aux)
+[25] (test.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1220,17 +1229,17 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: 4E8E6506734CBCAFA44542B29C28D0C8;3449.
  ) 
 Here is how much of TeX's memory you used:
- 15891 strings out of 467871
- 250276 string characters out of 5418861
+ 15892 strings out of 467871
+ 250619 string characters out of 5418861
  684208 words of memory out of 5000000
  44466 multiletter control sequences out of 15000+600000
  679483 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,13n,79p,521b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,13n,79p,553b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmb8v.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmr8v.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/urwvn/utmri8v.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on test.pdf (25 pages, 3714007 bytes).
+Output written on test.pdf (26 pages, 3717296 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 86 named destinations out of 1000 (max. 500000)
+ 431 PDF objects out of 1000 (max. 8388607)
+ 87 named destinations out of 1000 (max. 500000)
  354 words of extra memory for PDF output out of 10000 (max. 10000000)
 

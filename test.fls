@@ -1,6 +1,6 @@
-PWD d:\test
+PWD d:\OOP\PROJECT SVG\ReportPacketTracer
 INPUT C:\Users\User\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT d:\test\test.tex
+INPUT d:\OOP\PROJECT SVG\ReportPacketTracer\test.tex
 OUTPUT test.log
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\User\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

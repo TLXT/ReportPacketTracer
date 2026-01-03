@@ -8,10 +8,10 @@
 \contentsline {section}{\numberline {3}PART 1: STATIC ROUTING AND PACKET ANALYSIS}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Phần chuẩn bị (Cấu hình hệ thống)}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow $ PC3)}{17}{subsection.3.2}%
-\contentsline {section}{\numberline {4}PART 2: ENTERPRISE SERVICES AND DHCP RELAY}{24}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Phần chuẩn bị (Cấu hình hệ thống)}{24}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Trả lời các câu hỏi Lab}{24}{subsection.4.2}%
-\contentsline {section}{\numberline {5}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{24}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Kết luận}{24}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Hạn chế}{24}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Hướng phát triển}{24}{subsection.5.3}%
+\contentsline {section}{\numberline {4}PART 2: ENTERPRISE SERVICES AND DHCP RELAY}{25}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Phần chuẩn bị (Cấu hình hệ thống)}{25}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Trả lời các câu hỏi Lab}{25}{subsection.4.2}%
+\contentsline {section}{\numberline {5}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{25}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Kết luận}{25}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hạn chế}{25}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Hướng phát triển}{25}{subsection.5.3}%
