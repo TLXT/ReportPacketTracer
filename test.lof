@@ -1,44 +1,99 @@
 \babel@toc {vietnamese}{}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Chuẩn bị 3 Router và đặt tên lần lượt là R1, R2, R3}}{4}{figure.caption.3}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Chuẩn bị thêm 3 Switch và đặt tên lần lượt là S1, S2, S3}}{4}{figure.caption.4}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Chuẩn bị thêm 3 PC và đặt tên lần lượt là PC1, PC2, PC3}}{5}{figure.caption.5}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Chọn R1 vào Physical chọn HWIC-2T và tắt thiết bị}}{5}{figure.caption.6}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Lắp HWIC-2T vào thiết bị để có thêm 2 cổng Serial High-Speed}}{6}{figure.caption.7}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Turn On Router và chờ vài giây}}{6}{figure.caption.8}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Bấm biểu tường hình sấm sét để chọn dây đỏ có đồng hồ}}{7}{figure.caption.9}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Bấm vào R1 và chọn cổng Serial0/0/0}}{7}{figure.caption.10}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Bấm tiếp vào R2 và chọn cổng Serial0/0/0 để nối dây}}{8}{figure.caption.11}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Tương tự 2 bước trên nối cổng Serial0/0/1 của R2 với cổng Serial0/0/1 của R3}}{8}{figure.caption.12}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Hình ảnh sau khi nối các Router với nhau}}{9}{figure.caption.13}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Bấm vào R1 và chọn cổng GigabitEthernet0/0}}{9}{figure.caption.14}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Bấm tiếp vào S1 và chọn cổng GigabitEthernet0/1 để nối R1 và S1}}{10}{figure.caption.15}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Bấm vào S1 và chọn cổng FastEthernet0/2}}{10}{figure.caption.16}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Bấm tiếp vào PC1 và chọn cổng FastEthernet0 để nối S1 và PC1}}{11}{figure.caption.17}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Hình ảnh sau khi nối R2-S2-PC2 và R3-S3-PC3}}{11}{figure.caption.18}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Bấm vào R1 chọn CLI}}{12}{figure.caption.19}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Nhập các dòng lệnh này vào CLI của R1}}{12}{figure.caption.20}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Tương tự mở CLI của R2 và nhập các dòng lệnh này vào CLI của R2}}{12}{figure.caption.21}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Tương tự mở CLI của R3 và nhập các dòng lệnh này vào CLI của R3}}{12}{figure.caption.22}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Quay lại CLI của R1 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.23}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Quay lại CLI của R2 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.24}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Quay lại CLI của R3 để nhập thêm các dòng lệnh trên vào}}{13}{figure.caption.25}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Hình ảnh sau khi đã nhập hết tất cả các lệnh trên}}{14}{figure.caption.26}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Bấm vào PC1 chọn Desktop -> IP Configuration và sửa các IP của PC1 theo yêu cầu đề bài}}{14}{figure.caption.27}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Tương tự sửa các địa chỉ IP của PC2 theo yêu cầu đề bài}}{15}{figure.caption.28}%
-\contentsline {figure}{\numberline {27}{\ignorespaces Tương tự sửa các địa chỉ IP của PC3 theo yêu cầu đề bài}}{15}{figure.caption.29}%
-\contentsline {figure}{\numberline {28}{\ignorespaces Kiểm tra kết nối từ PC1 bằng lệnh ping}}{15}{figure.caption.30}%
-\contentsline {figure}{\numberline {29}{\ignorespaces Kiểm tra kết nối từ PC2 bằng lệnh ping}}{16}{figure.caption.31}%
-\contentsline {figure}{\numberline {30}{\ignorespaces Kiểm tra kết nối từ PC3 bằng lệnh ping}}{16}{figure.caption.32}%
-\contentsline {figure}{\numberline {31}{\ignorespaces Gói tin ở PC1 trước khi rời đi}}{17}{figure.caption.33}%
-\contentsline {figure}{\numberline {32}{\ignorespaces Gói tin khi đến S1}}{17}{figure.caption.34}%
-\contentsline {figure}{\numberline {33}{\ignorespaces Gói tin khi đến R1}}{18}{figure.caption.35}%
-\contentsline {figure}{\numberline {34}{\ignorespaces Gói tin khi đến R2}}{18}{figure.caption.36}%
-\contentsline {figure}{\numberline {35}{\ignorespaces Gói tin khi đến R3}}{19}{figure.caption.37}%
-\contentsline {figure}{\numberline {36}{\ignorespaces Gói tin khi đến S3}}{19}{figure.caption.38}%
-\contentsline {figure}{\numberline {37}{\ignorespaces Gói tin khi đến PC3}}{20}{figure.caption.39}%
-\contentsline {figure}{\numberline {38}{\ignorespaces Gói tin đi từ PC3 đến S3}}{21}{figure.caption.40}%
-\contentsline {figure}{\numberline {39}{\ignorespaces Gói tin đến R3}}{21}{figure.caption.41}%
-\contentsline {figure}{\numberline {40}{\ignorespaces Gói tin đến R2}}{22}{figure.caption.42}%
-\contentsline {figure}{\numberline {41}{\ignorespaces Gói tin đến R1}}{22}{figure.caption.43}%
-\contentsline {figure}{\numberline {42}{\ignorespaces Gói tin đến S1}}{23}{figure.caption.44}%
-\contentsline {figure}{\numberline {43}{\ignorespaces Gói tin đến PC1}}{23}{figure.caption.45}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Chuẩn bị 3 Router và đặt tên lần lượt là R1, R2, R3}}{6}{figure.caption.3}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Chuẩn bị thêm 3 Switch và đặt tên lần lượt là S1, S2, S3}}{6}{figure.caption.4}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Chuẩn bị thêm 3 PC và đặt tên lần lượt là PC1, PC2, PC3}}{7}{figure.caption.5}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Chọn R1 vào Physical chọn HWIC-2T và tắt thiết bị}}{7}{figure.caption.6}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Lắp HWIC-2T vào thiết bị để có thêm 2 cổng Serial High-Speed}}{8}{figure.caption.7}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Turn On Router và chờ vài giây}}{8}{figure.caption.8}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Bấm biểu tường hình sấm sét để chọn dây đỏ có đồng hồ}}{9}{figure.caption.9}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Bấm vào R1 và chọn cổng Serial0/0/0}}{9}{figure.caption.10}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Bấm tiếp vào R2 và chọn cổng Serial0/0/0 để nối dây}}{10}{figure.caption.11}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Tương tự 2 bước trên nối cổng Serial0/0/1 của R2 với cổng Serial0/0/1 của R3}}{10}{figure.caption.12}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Hình ảnh sau khi nối các Router với nhau}}{11}{figure.caption.13}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Bấm vào R1 và chọn cổng GigabitEthernet0/0}}{11}{figure.caption.14}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Bấm tiếp vào S1 và chọn cổng GigabitEthernet0/1 để nối R1 và S1}}{12}{figure.caption.15}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Bấm vào S1 và chọn cổng FastEthernet0/2}}{12}{figure.caption.16}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Bấm tiếp vào PC1 và chọn cổng FastEthernet0 để nối S1 và PC1}}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Hình ảnh sau khi nối R2-S2-PC2 và R3-S3-PC3}}{13}{figure.caption.18}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Bấm vào R1 chọn CLI}}{14}{figure.caption.19}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Nhập các dòng lệnh này vào CLI của R1}}{14}{figure.caption.20}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Tương tự mở CLI của R2 và nhập các dòng lệnh này vào CLI của R2}}{14}{figure.caption.21}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Tương tự mở CLI của R3 và nhập các dòng lệnh này vào CLI của R3}}{14}{figure.caption.22}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Quay lại CLI của R1 để nhập thêm các dòng lệnh trên vào}}{15}{figure.caption.23}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Quay lại CLI của R2 để nhập thêm các dòng lệnh trên vào}}{15}{figure.caption.24}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Quay lại CLI của R3 để nhập thêm các dòng lệnh trên vào}}{15}{figure.caption.25}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Hình ảnh sau khi đã nhập hết tất cả các lệnh trên}}{16}{figure.caption.26}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Bấm vào PC1 chọn Desktop -> IP Configuration và sửa các IP của PC1 theo yêu cầu đề bài}}{16}{figure.caption.27}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Tương tự sửa các địa chỉ IP của PC2 theo yêu cầu đề bài}}{17}{figure.caption.28}%
+\contentsline {figure}{\numberline {27}{\ignorespaces Tương tự sửa các địa chỉ IP của PC3 theo yêu cầu đề bài}}{17}{figure.caption.29}%
+\contentsline {figure}{\numberline {28}{\ignorespaces Kiểm tra kết nối từ PC1 bằng lệnh ping}}{17}{figure.caption.30}%
+\contentsline {figure}{\numberline {29}{\ignorespaces Kiểm tra kết nối từ PC2 bằng lệnh ping}}{18}{figure.caption.31}%
+\contentsline {figure}{\numberline {30}{\ignorespaces Kiểm tra kết nối từ PC3 bằng lệnh ping}}{18}{figure.caption.32}%
+\contentsline {figure}{\numberline {31}{\ignorespaces Gói tin ở PC1 trước khi rời đi}}{19}{figure.caption.33}%
+\contentsline {figure}{\numberline {32}{\ignorespaces Gói tin khi đến S1}}{19}{figure.caption.34}%
+\contentsline {figure}{\numberline {33}{\ignorespaces Gói tin khi đến R1}}{20}{figure.caption.35}%
+\contentsline {figure}{\numberline {34}{\ignorespaces Gói tin khi đến R2}}{20}{figure.caption.36}%
+\contentsline {figure}{\numberline {35}{\ignorespaces Gói tin khi đến R3}}{21}{figure.caption.37}%
+\contentsline {figure}{\numberline {36}{\ignorespaces Gói tin khi đến S3}}{21}{figure.caption.38}%
+\contentsline {figure}{\numberline {37}{\ignorespaces Gói tin khi đến PC3}}{22}{figure.caption.39}%
+\contentsline {figure}{\numberline {38}{\ignorespaces Gói tin đi từ PC3 đến S3}}{23}{figure.caption.40}%
+\contentsline {figure}{\numberline {39}{\ignorespaces Gói tin đến R3}}{23}{figure.caption.41}%
+\contentsline {figure}{\numberline {40}{\ignorespaces Gói tin đến R2}}{24}{figure.caption.42}%
+\contentsline {figure}{\numberline {41}{\ignorespaces Gói tin đến R1}}{24}{figure.caption.43}%
+\contentsline {figure}{\numberline {42}{\ignorespaces Gói tin đến S1}}{25}{figure.caption.44}%
+\contentsline {figure}{\numberline {43}{\ignorespaces Gói tin đến PC1}}{25}{figure.caption.45}%
+\contentsline {figure}{\numberline {44}{\ignorespaces Chuẩn bị Router R4, Switch S4, S5 và các PC, Server}}{27}{figure.caption.47}%
+\contentsline {figure}{\numberline {45}{\ignorespaces Lắp HWIC-2T cho R4 để có thêm 2 cổng Serial}}{27}{figure.caption.48}%
+\contentsline {figure}{\numberline {46}{\ignorespaces Lắp HWIC-2T thứ 2 cho R2 để có thêm 2 cổng Serial}}{28}{figure.caption.49}%
+\contentsline {figure}{\numberline {47}{\ignorespaces Chọn dây DCE, bấm vào R2 và chọn cổng Serial0/1/0}}{29}{figure.caption.50}%
+\contentsline {figure}{\numberline {48}{\ignorespaces Bấm tiếp vào R4 và chọn cổng Serial0/0/0 để nối dây}}{29}{figure.caption.51}%
+\contentsline {figure}{\numberline {49}{\ignorespaces Chọn dây Copper Straight-Through, bấm vào R4 và chọn cổng GigabitEthernet0/0}}{30}{figure.caption.52}%
+\contentsline {figure}{\numberline {50}{\ignorespaces Bấm tiếp vào S4 và chọn cổng GigabitEthernet0/1 để nối dây}}{30}{figure.caption.53}%
+\contentsline {figure}{\numberline {51}{\ignorespaces Chọn dây Copper Straight-Through, bấm vào S4 và chọn cổng FastEthernet0/1}}{31}{figure.caption.54}%
+\contentsline {figure}{\numberline {52}{\ignorespaces Bấm tiếp vào PC4 và chọn cổng FastEthernet0 để nối dây}}{31}{figure.caption.55}%
+\contentsline {figure}{\numberline {53}{\ignorespaces Chọn dây Copper Straight-Through, bấm vào S5 và chọn cổng FastEthernet0/1}}{32}{figure.caption.56}%
+\contentsline {figure}{\numberline {54}{\ignorespaces Bấm tiếp vào ServerDHCP/DNS và chọn cổng FastEthernet0 để nối dây}}{32}{figure.caption.57}%
+\contentsline {figure}{\numberline {55}{\ignorespaces Hình ảnh sau khi nối xong tất cả các thiết bị trong Part 2}}{33}{figure.caption.58}%
+\contentsline {figure}{\numberline {56}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng Serial0/0/0}}{33}{figure.caption.59}%
+\contentsline {figure}{\numberline {57}{\ignorespaces Mở CLI của R2 và nhập các dòng lệnh để cấu hình cổng Serial0/1/0}}{33}{figure.caption.60}%
+\contentsline {figure}{\numberline {58}{\ignorespaces Kết nối giữa R2 và R4 chuyển xanh}}{34}{figure.caption.61}%
+\contentsline {figure}{\numberline {59}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng GigabitEthernet0/0}}{34}{figure.caption.62}%
+\contentsline {figure}{\numberline {60}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng GigabitEthernet0/1}}{35}{figure.caption.63}%
+\contentsline {figure}{\numberline {61}{\ignorespaces Kết nối giữa R4 và S4, S5 chuyển xanh}}{35}{figure.caption.64}%
+\contentsline {figure}{\numberline {62}{\ignorespaces Cấu hình IP tĩnh cho ServerDHCP/DNS}}{36}{figure.caption.65}%
+\contentsline {figure}{\numberline {63}{\ignorespaces Cấu hình IP tĩnh cho ServerHTTP}}{36}{figure.caption.66}%
+\contentsline {figure}{\numberline {64}{\ignorespaces Chạy ipconfig trên ServerDHCP/DNS}}{36}{figure.caption.67}%
+\contentsline {figure}{\numberline {65}{\ignorespaces Chạy ipconfig trên ServerHTTP}}{37}{figure.caption.68}%
+\contentsline {figure}{\numberline {66}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình Default Route}}{37}{figure.caption.69}%
+\contentsline {figure}{\numberline {67}{\ignorespaces Mở CLI của R2 và nhập các dòng lệnh để cấu hình Route về mạng 172.16.0.0/16 qua R4.}}{37}{figure.caption.70}%
+\contentsline {figure}{\numberline {68}{\ignorespaces Cập nhật bảng định tuyến trên R1 để nhận biết mạng mới.}}{37}{figure.caption.71}%
+\contentsline {figure}{\numberline {69}{\ignorespaces Cập nhật bảng định tuyến trên R3 để nhận biết mạng mới.}}{37}{figure.caption.72}%
+\contentsline {figure}{\numberline {70}{\ignorespaces Chạy lệnh \texttt {show ip route} trên R4 để kiểm tra bảng định tuyến}}{38}{figure.caption.73}%
+\contentsline {figure}{\numberline {71}{\ignorespaces Chạy lệnh \texttt {show ip route} trên R2 để kiểm tra bảng định tuyến}}{38}{figure.caption.74}%
+\contentsline {figure}{\numberline {72}{\ignorespaces Cấu hình DHCP Server trên ServerDHCP/DNS}}{39}{figure.caption.75}%
+\contentsline {figure}{\numberline {73}{\ignorespaces Cấu hình DNS Server trên ServerDHCP/DNS}}{40}{figure.caption.76}%
+\contentsline {figure}{\numberline {74}{\ignorespaces Cấu hình Web Server trên ServerHTTP}}{41}{figure.caption.77}%
+\contentsline {figure}{\numberline {75}{\ignorespaces Chỉnh sửa file index.html trên ServerHTTP}}{42}{figure.caption.78}%
+\contentsline {figure}{\numberline {76}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình DHCP Relay Agent}}{42}{figure.caption.79}%
+\contentsline {figure}{\numberline {77}{\ignorespaces Mở PC4, vào Desktop -> IP Configuration, IP Configuration đang để Static}}{43}{figure.caption.80}%
+\contentsline {figure}{\numberline {78}{\ignorespaces Chuyển sang DHCP và chờ một chút để lấy địa chỉ IP động từ DHCP Server}}{43}{figure.caption.81}%
+\contentsline {figure}{\numberline {79}{\ignorespaces Địa chỉ IP động đã được cấp cho PC4}}{43}{figure.caption.82}%
+\contentsline {figure}{\numberline {80}{\ignorespaces Vào PC4, mở trình duyệt web và truy cập vào \texttt {companyweb.com}.}}{44}{figure.caption.83}%
+\contentsline {figure}{\numberline {81}{\ignorespaces Trang web hiển thị thông tin thành viên nhóm, chứng tỏ dịch vụ DNS và Web Server hoạt động tốt.}}{44}{figure.caption.84}%
+\contentsline {figure}{\numberline {82}{\ignorespaces Mở Command Prompt trên PC4 và ping đến PC1 (192.168.1.10).}}{45}{figure.caption.85}%
+\contentsline {figure}{\numberline {83}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để xóa cấu hình IP cũ trên cổng vật lý của Router R4.}}{46}{figure.caption.86}%
+\contentsline {figure}{\numberline {84}{\ignorespaces Mở CLI của S4 và nhập các dòng lệnh để tạo VLAN 10.}}{46}{figure.caption.87}%
+\contentsline {figure}{\numberline {85}{\ignorespaces Cấu hình các cổng người dùng sang chế độ Access VLAN 10.}}{47}{figure.caption.88}%
+\contentsline {figure}{\numberline {86}{\ignorespaces Cấu hình đường Trunk trên cổng Uplink của Switch S4.}}{47}{figure.caption.89}%
+\contentsline {figure}{\numberline {87}{\ignorespaces Mở CLI của S4 và nhập các dòng lệnh để kiểm tra cấu hình VLAN.}}{47}{figure.caption.90}%
+\contentsline {figure}{\numberline {88}{\ignorespaces Mở CLI của S4 và nhập các dòng lệnh để kiểm tra trạng thái Trunk.}}{48}{figure.caption.91}%
+\contentsline {figure}{\numberline {89}{\ignorespaces Mở CLI của S5 và nhập các dòng lệnh để tạo VLAN 30.}}{48}{figure.caption.92}%
+\contentsline {figure}{\numberline {90}{\ignorespaces Cấu hình các cổng Server sang chế độ Access VLAN 30.}}{48}{figure.caption.93}%
+\contentsline {figure}{\numberline {91}{\ignorespaces Cấu hình đường Trunk trên cổng Uplink của Switch S5.}}{48}{figure.caption.94}%
+\contentsline {figure}{\numberline {92}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình Sub-interface, Encapsulation và IP Helper-Address cho mạng Office LAN (VLAN 10).}}{49}{figure.caption.95}%
+\contentsline {figure}{\numberline {93}{\ignorespaces Mở CLI của R4 và nhập các dòng lệnh để cấu hình Sub-interface Gateway cho mạng Server Farm (VLAN 30).}}{49}{figure.caption.96}%
+\contentsline {figure}{\numberline {94}{\ignorespaces Mở CLI của R4 và nhập lệnh \texttt {show ip route} để kiểm tra bảng định tuyến sau khi cấu hình Router-on-a-Stick.}}{50}{figure.caption.97}%
+\contentsline {figure}{\numberline {95}{\ignorespaces Mở PC4, vào Desktop -> IP Configuration, kiểm tra địa chỉ IP động đã được cấp từ DHCP Server.}}{50}{figure.caption.98}%
+\contentsline {figure}{\numberline {96}{\ignorespaces Vào PC4, mở trình duyệt web và truy cập vào \texttt {companyweb.com}.}}{51}{figure.caption.99}%
+\contentsline {figure}{\numberline {97}{\ignorespaces Trang web hiển thị thông tin thành viên nhóm, chứng tỏ dịch vụ DNS và Web Server hoạt động tốt sau khi nâng cấp lên VLAN.}}{51}{figure.caption.100}%
+\contentsline {figure}{\numberline {98}{\ignorespaces Mở Command Prompt trên PC4 và ping đến PC1 (172.16.0.1).}}{52}{figure.caption.101}%

@@ -1,17 +1,36 @@
 \babel@toc {vietnamese}{}\relax 
-\contentsline {section}{\numberline {1}THÔNG TIN NHÓM}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Giới thiệu thành viên nhóm}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}Mục tiêu đồ án}{3}{subsection.1.2}%
-\contentsline {section}{\numberline {2}ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH}{3}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Bảng đánh giá mức độ hoàn thành}{3}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Số điểm mong đợi}{3}{subsection.2.2}%
-\contentsline {section}{\numberline {3}PART 1: STATIC ROUTING AND PACKET ANALYSIS}{3}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Phần chuẩn bị (Cấu hình hệ thống)}{3}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow $ PC3)}{17}{subsection.3.2}%
-\contentsline {section}{\numberline {4}PART 2: ENTERPRISE SERVICES AND DHCP RELAY}{24}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Phần chuẩn bị (Cấu hình hệ thống)}{24}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Trả lời các câu hỏi Lab}{24}{subsection.4.2}%
-\contentsline {section}{\numberline {5}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{24}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Kết luận}{24}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Hạn chế}{24}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Hướng phát triển}{24}{subsection.5.3}%
+\contentsline {section}{\numberline {1}THÔNG TIN NHÓM}{5}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Giới thiệu thành viên nhóm}{5}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Mục tiêu đồ án}{5}{subsection.1.2}%
+\contentsline {section}{\numberline {2}ĐÁNH GIÁ MỨC ĐỘ HOÀN THÀNH}{5}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Bảng đánh giá mức độ hoàn thành}{5}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Số điểm mong đợi}{5}{subsection.2.2}%
+\contentsline {section}{\numberline {3}PART 1: STATIC ROUTING AND PACKET ANALYSIS}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Phần chuẩn bị (Cấu hình hệ thống)}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Trả lời các câu hỏi Lab - Phân tích hành trình gói tin (PC1 $\rightarrow $ PC3)}{19}{subsection.3.2}%
+\contentsline {section}{\numberline {4}PART 2: ENTERPRISE SERVICES AND DHCP RELAY}{26}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Thiết kế và Phân hoạch địa chỉ IP}{26}{subsection.4.1}%
+\contentsline {subsubsection}{\numberline {4.1.1}Yêu cầu thiết kế}{26}{subsubsection.4.1.1}%
+\contentsline {subsubsection}{\numberline {4.1.2}Bảng phân hoạch IP (VLSM Calculation)}{26}{subsubsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.2}\textbf {Giai đoạn 1: Triển khai Kết nối cơ bản (Mandatory - No VLANs)}}{26}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}\textbf {Sơ đồ đấu nối thiết bị}}{26}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}\textbf {Thiết lập kết nối WAN (WAN Link Setup)}}{33}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}\textbf {Cấu hình các cổng LAN Gateway (Router LAN Interfaces)}}{34}{subsubsection.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.4}\textbf {Cấu hình IP tĩnh cho Server (Server IP Configuration)}}{35}{subsubsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.5}\textbf {Cấu hình Định tuyến tĩnh toàn mạng (End-to-End Static Routing)}}{37}{subsubsection.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.6}\textbf {Triển khai Dịch vụ Mạng trên Server (Core Services Setup)}}{38}{subsubsection.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.7}\textbf {Cấu hình DHCP Relay Agent trên Router R4}}{42}{subsubsection.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.8}\textbf {Cấu hình DHCP Client trên các PC trong Office LAN}}{42}{subsubsection.4.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.9}\textbf {Kiểm tra Kết nối và Dịch vụ Mạng Toàn Mạng}}{44}{subsubsection.4.2.9}%
+\contentsline {subsubsection}{\numberline {4.2.10}Tổng kết Phần 2}{46}{subsubsection.4.2.10}%
+\contentsline {subsection}{\numberline {4.3}Giai đoạn 2: Nâng cấp hệ thống lên VLAN (Advanced Implementation)}{46}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Chuẩn bị chuyển đổi}{46}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Cấu hình Switch S4}{46}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Cấu hình Switch S5}{48}{subsubsection.4.3.3}%
+\contentsline {subsubsection}{\numberline {4.3.4}Cấu hình Router R4 cho Router-on-a-Stick và DHCP Relay}{49}{subsubsection.4.3.4}%
+\contentsline {subsubsection}{\numberline {4.3.5}Kiểm tra bảng định tuyến sau chuyển đổi}{49}{subsubsection.4.3.5}%
+\contentsline {subsubsection}{\numberline {4.3.6}Kiểm tra kết nối và dịch vụ mạng sau khi nâng cấp lên VLAN}{50}{subsubsection.4.3.6}%
+\contentsline {section}{\numberline {5}KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}{53}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Kết luận}{53}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Hạn chế}{53}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Hướng phát triển}{53}{subsection.5.3}%

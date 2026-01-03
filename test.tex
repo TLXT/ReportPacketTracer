@@ -514,10 +514,473 @@ Ta thấy rằng hành trình gói tin từ PC3 đến PC1 cũng tuân theo các
 
 \section{PART 2: ENTERPRISE SERVICES AND DHCP RELAY}
 
-\subsection{Phần chuẩn bị (Cấu hình hệ thống)}
+\subsection{Thiết kế và Phân hoạch địa chỉ IP}
+\subsubsection{Yêu cầu thiết kế}
+\begin{itemize}
+    \item \textbf{Mục tiêu:} Mở rộng hệ thống mạng doanh nghiệp, kết nối chi nhánh mới (Part 2) vào hệ thống trụ sở chính (Part 1).
+    \item \textbf{Yêu cầu kỹ thuật:} 
+    \begin{itemize}
+        \item \textbf{Office LAN:} 30 hosts (Dành cho nhân viên).
+        \item \textbf{Server Farm:} 10 hosts (Dành cho các máy chủ dịch vụ).
+        \item \textbf{WAN Link:} 2 hosts (Kết nối Router R2 - R4).
+    \end{itemize}
+    \item \textbf{Địa chỉ mạng gốc:} $172.16.0.0/16$.
+\end{itemize}
+\subsubsection{Bảng phân hoạch IP (VLSM Calculation)}
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{|l|c|c|c|c|c|p{3.5cm}|}
+        \hline
+        \shortstack{\textbf{Tên mạng}\\\textbf{(Network Name)}} &
+        \textbf{VLAN ID} &
+        \shortstack{\textbf{Số Host}\\\textbf{yêu cầu}} &
+        \textbf{CIDR} &
+        \textbf{Subnet Mask} &
+        \shortstack{\textbf{Địa chỉ mạng}\\\textbf{(Network Address)}} \\
+        \hline
+        WAN Link &
+        N/A &
+        2 &
+        /30 &
+        255.255.255.252 &
+        172.16.0.48 \\
+        \hline
+        Office LAN &
+        10 &
+        30 &
+        /27 &
+        255.255.255.224 &
+        172.16.0.0 \\
+        \hline
+        Server Farm &
+        30 &
+        10 &
+        /28 &
+        255.255.255.240 &
+        172.16.0.32 \\
+        \hline
+    \end{tabular}
+\end{table}
 
-\subsection{Trả lời các câu hỏi Lab}
+\subsection{\textbf{Giai đoạn 1: Triển khai Kết nối cơ bản (Mandatory - No VLANs)}}
+\subsubsection{\textbf{Sơ đồ đấu nối thiết bị}}
+\textbf{Mô tả:} Nhóm thiết lập mô hình kết nối vật lý như sau:
+\begin{itemize}
+    \item \textbf{Router R4:} Đóng vai trò Gateway cho toàn bộ chi nhánh mới.
+    \item \textbf{Cổng G0/0:} Kết nối xuống Switch S4 (Office LAN).
+    \item \textbf{Cổng G0/1:} Kết nối xuống Switch S5 (Server Farm).
+    \item \textbf{Cổng Serial0/0/0:} Kết nối WAN về Router R2 (Part 1).
+\end{itemize}
 
+
+\textbf{Các bước chi tiết:}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_1.png}
+    \caption{Chuẩn bị Router R4, Switch S4, S5 và các PC, Server}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_2.png}
+    \caption{Lắp HWIC-2T cho R4 để có thêm 2 cổng Serial}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_3.png}
+    \caption{Lắp HWIC-2T thứ 2 cho R2 để có thêm 2 cổng Serial}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_4.png}
+    \caption{Chọn dây DCE, bấm vào R2 và chọn cổng Serial0/1/0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_5.png}
+    \caption{Bấm tiếp vào R4 và chọn cổng Serial0/0/0 để nối dây}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_6.png}
+    \caption{Chọn dây Copper Straight-Through, bấm vào R4 và chọn cổng GigabitEthernet0/0}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_7.png}
+    \caption{Bấm tiếp vào S4 và chọn cổng GigabitEthernet0/1 để nối dây}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_8.png}
+    \caption{Chọn dây Copper Straight-Through, bấm vào S4 và chọn cổng FastEthernet0/1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_9.png}
+    \caption{Bấm tiếp vào PC4 và chọn cổng FastEthernet0 để nối dây}
+\end{figure}
+Làm tương tự để nối Router R4 với Switch S5 qua cổng GigabitEthernet0/1 và Switch S4 với các PC còn lại.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_10.png}
+    \caption{Chọn dây Copper Straight-Through, bấm vào S5 và chọn cổng FastEthernet0/1}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_11.png}
+    \caption{Bấm tiếp vào ServerDHCP/DNS và chọn cổng FastEthernet0 để nối dây}
+\end{figure}
+Làm tương tự để nối Switch S5 với ServerHTTP qua cổng FastEthernet0/2.
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_12.png}
+    \caption{Hình ảnh sau khi nối xong tất cả các thiết bị trong Part 2}
+\end{figure}
+\subsubsection{\textbf{Thiết lập kết nối WAN (WAN Link Setup)}}
+\textbf{Mô tả:} Nhóm tiến hành cấu hình địa chỉ IP cho cổng Serial trên Router R4 và Router R2 để thiết lập đường truyền vật lý giữa hai chi nhánh.
+\begin{itemize}
+    \item \textbf{Trên Router R4:} Cấu hình cổng Serial0/0/0 với IP 172.16.0.50/30 và bật cổng (no shutdown).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_13.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng Serial0/0/0}
+    \end{figure}
+    \item \textbf{Trên Router R2:} Cấu hình cổng Serial0/1/0 với IP 172.16.0.49/30 và thiết lập clock rate 64000 (đầu DCE).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_14.png}
+        \caption{Mở CLI của R2 và nhập các dòng lệnh để cấu hình cổng Serial0/1/0}
+    \end{figure}
+\end{itemize}
+Sau khi hoàn thành, hai Router R2 và R4 đã có thể giao tiếp với nhau qua đường truyền WAN.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_15.png}
+    \caption{Kết nối giữa R2 và R4 chuyển xanh}
+\end{figure}
+\subsubsection{\textbf{Cấu hình các cổng LAN Gateway (Router LAN Interfaces)}}
+\textbf{Mô tả:} Nhóm cấu hình địa chỉ IP cho các cổng GigabitEthernet trên Router R4 để làm Gateway cho các mạng LAN trong chi nhánh mới.
+\begin{itemize}
+    \item \textbf{Cổng G0/0 (Office LAN):} Cấu hình với IP 172.16.0.1/27.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{Giga00.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng GigabitEthernet0/0}
+    \end{figure}
+    \item \textbf{Cổng G0/1 (Server Farm):} Cấu hình với IP 172.16.0.33/28.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{Giga01.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình cổng GigabitEthernet0/1}
+    \end{figure}
+\end{itemize}
+Sau khi hoàn thành, các cổng LAN trên Router R4 đã sẵn sàng làm Gateway cho các thiết bị trong mạng LAN (kết nối chuyển xanh).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_16.png}
+    \caption{Kết nối giữa R4 và S4, S5 chuyển xanh}
+\end{figure}
+\subsubsection{\textbf{Cấu hình IP tĩnh cho Server (Server IP Configuration)}}
+\textbf{Mô tả:} Nhóm cấu hình địa chỉ IP tĩnh cho các Server trong Server Farm để đảm bảo chúng luôn có địa chỉ cố định.
+\begin{itemize}
+    \item \textbf{ServerDHCP/DNS:} Cấu hình với IP 172.16.0.34, Gateway 172.16.0.33.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{ServerDHCP.png}
+        \caption{Cấu hình IP tĩnh cho ServerDHCP/DNS}
+    \end{figure}
+    \item \textbf{ServerHTTP:} Cấu hình với IP 172.16.0.35, Gateway 172.16.0.33.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{ServerHTTP.png}
+        \caption{Cấu hình IP tĩnh cho ServerHTTP}
+    \end{figure}
+\end{itemize}
+Khi chạy ipconfig trên các Server, ta thấy địa chỉ IP đã được cấu hình đúng.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{ipconfigDHCPDNS.png}
+    \caption{Chạy ipconfig trên ServerDHCP/DNS}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{ipconfigHTTP.png}
+    \caption{Chạy ipconfig trên ServerHTTP}
+\end{figure}
+\subsubsection{\textbf{Cấu hình Định tuyến tĩnh toàn mạng (End-to-End Static Routing)}}
+\textbf{Mô tả:} Nhóm cấu hình định tuyến tĩnh trên Router R4 để đảm bảo các mạng LAN trong chi nhánh mới có thể giao tiếp với mạng trụ sở chính.
+\begin{itemize} 
+    \item \textbf{Trên Router R4:} Cấu hình Default Route trỏ về R2 để ra Internet.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_17.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình Default Route}
+    \end{figure}
+    \item \textbf{Trên Router R2:} Cấu hình Route trỏ về mạng 172.16.0.0/16 qua R4.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_18.png}
+        \caption{Mở CLI của R2 và nhập các dòng lệnh để cấu hình Route về mạng 172.16.0.0/16 qua R4.}
+    \end{figure}
+    \item \textbf{Trên Router R1 và R3:} Cấu hình Route trỏ về mạng 172.16.0.0/16 thông qua R2 (Next-hop).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_19.png}
+        \caption{Cập nhật bảng định tuyến trên R1 để nhận biết mạng mới.}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_20.png}
+        \caption{Cập nhật bảng định tuyến trên R3 để nhận biết mạng mới.}
+    \end{figure}
+\end{itemize}
+Sau khi hoàn thành, toàn bộ mạng trong chi nhánh mới đã có thể giao tiếp với mạng trụ sở chính.
+\begin{itemize}
+    \item \textbf{Kiểm tra các kết nối của Router R4:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_21.png}
+        \caption{Chạy lệnh \texttt{show ip route} trên R4 để kiểm tra bảng định tuyến}
+    \end{figure}
+    \item \textbf{Kiểm tra các kết nối của Router R2:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_22.png}
+        \caption{Chạy lệnh \texttt{show ip route} trên R2 để kiểm tra bảng định tuyến}
+    \end{figure}
+\end{itemize}
+\subsubsection{\textbf{Triển khai Dịch vụ Mạng trên Server (Core Services Setup)}}
+\textbf{Mô tả:} Nhóm triển khai các dịch vụ mạng thiết yếu trên các Server trong chi nhánh mới, tiến hành cấu hình phần mềm dịch vụ.
+\begin{itemize}
+    \item \textbf{Trên ServerDHCP/DNS:} 
+    Chọn mục Service/DHCP trên Server, tạo serverPool với các thông số:
+        \begin{itemize}
+            \item Pool Name: officePool
+            \item Default Gateway: 172.16.0.1
+            \item DNS: 172.16.0.34
+            \item Starting IP Address: 172.16.0.2
+            \item Subnet Mask: 255.255.255.224
+            \item Maximum Number of Users: 30
+        \end{itemize}
+        Ấn nút Add để hoàn tất cấu hình DHCP Server.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_23.png}
+        \caption{Cấu hình DHCP Server trên ServerDHCP/DNS}
+    \end{figure}
+    Chọn mục Service/DNS trên Server, tạo bản ghi DNS với các thông số:
+        \begin{itemize}
+            \item Hostname: companyweb.com
+            \item Type : A
+            \item IP Address: 172.16.0.35
+        \end{itemize}
+        Ấn nút Add để hoàn tất cấu hình DNS Server.
+    \begin{figure}[H]
+        \centering 
+        \includegraphics[width=1\textwidth]{P2_24.png}
+        \caption{Cấu hình DNS Server trên ServerDHCP/DNS}   
+    \end{figure}
+    \item \textbf{Trên ServerHTTP:}
+    Chọn mục Service/HTTP trên Server, bật dịch vụ HTTP và HTTPS.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_25.png}
+        \caption{Cấu hình Web Server trên ServerHTTP}
+    \end{figure}
+    Chỉnh sửa trang web mặc định để hiển thị thông tin thành viên nhóm.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_26.png}
+        \caption{Chỉnh sửa file index.html trên ServerHTTP}
+    \end{figure}
+\end{itemize}
+\subsubsection{\textbf{Cấu hình DHCP Relay Agent trên Router R4}}
+\textbf{Mô tả:} Cấu hình Relay Agent trên cổng GigabitEthernet0/0 để chuyển tiếp gói tin DHCP Discovery sang nhánh Server Farm (172.16.0.34).
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_27.png}
+    \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình DHCP Relay Agent}
+\end{figure}
+\subsubsection{\textbf{Cấu hình DHCP Client trên các PC trong Office LAN}}
+\textbf{Mô tả:} Cấu hình các PC trong Office LAN để nhận địa chỉ IP động từ DHCP Server.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_28.png}
+    \caption{Mở PC4, vào Desktop -> IP Configuration, IP Configuration đang để Static}   
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_29.png}
+    \caption{Chuyển sang DHCP và chờ một chút để lấy địa chỉ IP động từ DHCP Server}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_30.png}
+    \caption{Địa chỉ IP động đã được cấp cho PC4}
+\end{figure}
+Làm tương tự để cấu hình DHCP Client cho các PC9, PC5 trong Office LAN.
+\subsubsection{\textbf{Kiểm tra Kết nối và Dịch vụ Mạng Toàn Mạng}}
+\textbf{Mô tả:} Nhóm tiến hành kiểm tra kết nối mạng và các dịch vụ mạng đã cấu hình trên toàn bộ hệ thống.
+\begin{itemize}
+    \item \textbf{Kiểm tra kết nối từ PC4 đến ServerHTTP qua tên miền:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_32.png}
+        \caption{Vào PC4, mở trình duyệt web và truy cập vào \texttt{companyweb.com}.}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_33.png}
+        \caption{Trang web hiển thị thông tin thành viên nhóm, chứng tỏ dịch vụ DNS và Web Server hoạt động tốt.}
+    \end{figure}
+    \item \textbf{Thử ping từ PC4 đến PC1 trong Part 1:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_34.png}
+        \caption{Mở Command Prompt trên PC4 và ping đến PC1 (192.168.1.10).}
+    \end{figure}
+\end{itemize}
+\newpage
+\subsubsection{Tổng kết Phần 2}
+\begin{itemize}
+    \item Nhóm đã hoàn thành việc mở rộng hệ thống mạng doanh nghiệp bằng cách kết nối chi nhánh mới (Part 2) vào trụ sở chính (Part 1) thông qua đường truyền WAN.
+    \item Các dịch vụ mạng thiết yếu như DHCP, DNS và Web Server đã được triển khai và hoạt động ổn định trong toàn bộ hệ thống.
+    \item Việc cấu hình DHCP Relay Agent trên Router R4 đã giúp các PC trong Office LAN nhận địa chỉ IP động từ DHCP Server một cách hiệu quả.
+    \item Kết nối mạng giữa các thiết bị trong chi nhánh mới và trụ sở chính đã được kiểm tra và xác nhận hoạt động tốt.
+    \item Toàn bộ hệ thống mạng đã đáp ứng được các yêu cầu kỹ thuật và mục tiêu đề ra ban đầu.
+\end{itemize}
+\subsection{Giai đoạn 2: Nâng cấp hệ thống lên VLAN (Advanced Implementation)}
+\subsubsection{Chuẩn bị chuyển đổi}
+\textbf{Mô tả:} Để chuyển từ mô hình vật lý sang mô hình Router-on-a-Stick, bước đầu tiên nhóm thực hiện là loại bỏ địa chỉ IP trên cổng vật lý và tắt cổng tạm thời để tránh xung đột trong quá trình cấu hình.
+Trên Router R4, truy cập interface GigabitEthernet0/0, xóa IP cũ (no ip address) và shutdown cổng.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_35.png}
+    \caption{Mở CLI của R4 và nhập các dòng lệnh để xóa cấu hình IP cũ trên cổng vật lý của Router R4.}
+\end{figure}
+Làm tương tự cho cổng GigabitEthernet0/1 - Switch S5.
+\subsubsection{Cấu hình Switch S4}
+\begin{enumerate} 
+    \item \textbf{Khởi tạo VLAN:} Tạo VLAN 10 với tên OFFICE\_LAN.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_36.png}
+        \caption{Mở CLI của S4 và nhập các dòng lệnh để tạo VLAN 10.}
+    \end{figure}
+    \item \textbf{Gán cổng Access:} Đưa các cổng kết nối với PC (Range Fa0/1-10) vào VLAN 10.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_37.png}
+        \caption{Cấu hình các cổng người dùng sang chế độ Access VLAN 10.}
+    \end{figure}
+    \item \textbf{Cấu hình cổng Trunk:} Cấu hình cổng Uplink GigabitEthernet0/1 (nối lên Router R4) sang chế độ Trunk để cho phép VLAN đi qua.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_38.png}
+        \caption{Cấu hình đường Trunk trên cổng Uplink của Switch S4.}
+    \end{figure}
+    \item \textbf{Kiểm tra cấu hình VLAN và Trunk:} Sử dụng các lệnh show để xác nhận VLAN và trạng thái Trunk.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_39.png}
+        \caption{Mở CLI của S4 và nhập các dòng lệnh để kiểm tra cấu hình VLAN.}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_40.png}
+        \caption{Mở CLI của S4 và nhập các dòng lệnh để kiểm tra trạng thái Trunk.}
+    \end{figure}
+\end{enumerate}
+\subsubsection{Cấu hình Switch S5}
+\textbf{Mô tả:} Thực hiện các bước tương tự như trên Switch S4 để cấu hình VLAN cho Server Farm.
+\begin{enumerate} 
+    \item \textbf{Khởi tạo VLAN:} Tạo VLAN 30 với tên SERVER\_FARM.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_41.png}
+        \caption{Mở CLI của S5 và nhập các dòng lệnh để tạo VLAN 30.}
+    \end{figure}
+    \item \textbf{Gán cổng Access:} Đưa các cổng kết nối với Server (Range Fa0/1-2) vào VLAN 30.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_42.png}
+        \caption{Cấu hình các cổng Server sang chế độ Access VLAN 30.}
+    \end{figure}
+    \item \textbf{Cấu hình cổng Trunk:} Cấu hình cổng Uplink GigabitEthernet0/1 (nối lên Router R4) sang chế độ Trunk để cho phép VLAN đi qua.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_43.png}
+        \caption{Cấu hình đường Trunk trên cổng Uplink của Switch S5.}
+    \end{figure}
+\end{enumerate}
+\subsubsection{Cấu hình Router R4 cho Router-on-a-Stick và DHCP Relay}
+\begin{itemize}
+    \item \textbf{Cấu hình cho Office LAN (VLAN 10):} Thao tác chi tiết:
+    \begin{enumerate}
+        \item Tạo cổng con GigabitEthernet0/0.10.
+        \item Đóng gói chuẩn 802.1Q cho VLAN 10 (encapsulation dot1q 10).
+        \item Đặt IP Address: 172.16.0.1 255.255.255.224.
+        \item Cấu hình Relay Agent: Thêm lệnh ip helper-address 172.16.0.34 để chuyển tiếp yêu cầu DHCP từ VLAN 10 sang Server Farm (VLAN 30).
+    \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_44.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình Sub-interface, Encapsulation và IP Helper-Address cho mạng Office LAN (VLAN 10).}
+    \end{figure}
+    \item \textbf{Cấu hình cho Server Farm (VLAN 30):} Thao tác chi tiết:
+    \begin{enumerate}
+        \item Tạo cổng con GigabitEthernet0/1.30.
+        \item Đóng gói chuẩn 802.1Q cho VLAN 30 (encapsulation dot1q 30).
+        \item Đặt IP Address: 172.16.0.33 255.255.255.240.
+    \end{enumerate}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_45.png}
+        \caption{Mở CLI của R4 và nhập các dòng lệnh để cấu hình Sub-interface Gateway cho mạng Server Farm (VLAN 30).}        
+    \end{figure}
+\end{itemize}
+\subsubsection{Kiểm tra bảng định tuyến sau chuyển đổi}
+\textbf{Mô tả:} Sau khi cấu hình xong các Sub-interface, nhóm thực hiện kiểm tra bảng định tuyến để đảm bảo Router R4 đã nhận diện được các mạng con VLAN dưới dạng Connected (C) và vẫn giữ được đường đi mặc định ra Internet.
+\begin{itemize}
+    \item Dòng C 172.16.0.0/27: Mạng Office LAN (VLAN 10) đã kết nối.
+    \item Dòng C 172.16.0.32/28: Mạng Server Farm (VLAN 30) đã kết nối.
+    \item Dòng S* 0.0.0.0/0: Default Route trỏ về R2 vẫn hoạt động tốt.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{P2_46.png}
+    \caption{Mở CLI của R4 và nhập lệnh \texttt{show ip route} để kiểm tra bảng định tuyến sau khi cấu hình Router-on-a-Stick.}
+\end{figure}
+\subsubsection{Kiểm tra kết nối và dịch vụ mạng sau khi nâng cấp lên VLAN}
+\textbf{Mô tả:} Nhóm tiến hành kiểm tra lại kết nối mạng và các dịch vụ mạng đã cấu hình trên toàn bộ hệ thống sau khi chuyển sang mô hình VLAN.
+\begin{itemize}
+    \item \textbf{Cấu hình DHCP Client trên các PC trong Office LAN:} Do đã cấu hình DHCP Client từ trước, nhóm chỉ cần kiểm tra lại địa chỉ IP được cấp.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_50.png}
+        \caption{Mở PC4, vào Desktop -> IP Configuration, kiểm tra địa chỉ IP động đã được cấp từ DHCP Server.}
+    \end{figure}
+    \item \textbf{Kiểm tra kết nối từ PC4 đến ServerHTTP qua tên miền:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_47.png}
+        \caption{Vào PC4, mở trình duyệt web và truy cập vào \texttt{companyweb.com}.}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_48.png}
+        \caption{Trang web hiển thị thông tin thành viên nhóm, chứng tỏ dịch vụ DNS và Web Server hoạt động tốt sau khi nâng cấp lên VLAN.}
+    \end{figure}
+    \item \textbf{Thử ping từ PC4 đến PC1 trong Part 1:}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{P2_49.png}
+        \caption{Mở Command Prompt trên PC4 và ping đến PC1 (172.16.0.1).}
+    \end{figure}
+\end{itemize}
+\newpage
 \section{KẾT LUẬN VÀ HƯỚNG PHÁT TRIỂN}
 
 \subsection{Kết luận}
