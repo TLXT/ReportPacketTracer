@@ -8,3 +8,10 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*test.aux
+*test.fdb_latexmk
+*test.fls
+*test.log
+*test.lof
+*test.synctex.gz
+*test.toc
