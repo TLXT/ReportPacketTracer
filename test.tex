@@ -379,24 +379,33 @@ Sau khi nhập các dòng lệnh trên thì chúng ta sẽ thấy đường dây
     \caption{Tương tự sửa các địa chỉ IP của PC3 theo yêu cầu đề bài}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{B28.png}
-    \caption{Kiểm tra kết nối từ PC1 bằng lệnh ping}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{B29.png}
-    \caption{Kiểm tra kết nối từ PC2 bằng lệnh ping}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{B30.png}
-    \caption{Kiểm tra kết nối từ PC3 bằng lệnh ping}
-\end{figure}
-
+\textbf{Kiểm tra:}
+\begin{itemize}
+    \item Từ PC1, mở Command Prompt và ping đến địa chỉ IP của PC3 (192.168.3.10) để kiểm tra kết nối. Ta sẽ thấy kết quả trả về thành công.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{C28.png}
+        \caption{Ping từ PC1 đến PC3 thành công}
+    \end{figure}
+    \item Từ Router R1, sử dụng lệnh \texttt{show ip route} để kiểm tra bảng định tuyến. Ta sẽ thấy IP của Router R2 và R3 đã xuất hiện trong bảng định tuyến và được đánh dấu là định tuyến tĩnh (S).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{C29.png}
+        \caption{Kiểm tra bảng định tuyến trên R1}
+    \end{figure}
+    \item Từ Router R2, sử dụng lệnh \texttt{show ip route} để kiểm tra bảng định tuyến. Ta sẽ thấy IP của Router R1 và R3 đã xuất hiện trong bảng định tuyến và được đánh dấu là định tuyến tĩnh (S).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{C30.png}
+        \caption{Kiểm tra bảng định tuyến trên R2}
+    \end{figure}
+    \item Từ Router R3, sử dụng lệnh \texttt{show ip route} để kiểm tra bảng định tuyến. Ta sẽ thấy IP của Router R1 và R2 đã xuất hiện trong bảng định tuyến và được đánh dấu là định tuyến tĩnh (S).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1\textwidth]{C31.png}
+        \caption{Kiểm tra bảng định tuyến trên R3}
+    \end{figure}
+\end{itemize}
 Vậy là chúng ta đã hoàn thành xong phần cấu hình hệ thống cho Part 1. Tiếp theo chúng ta sẽ phân tích hành trình gói tin từ PC1 đến PC3.
 \newpage
 
@@ -815,6 +824,14 @@ Sau khi hoàn thành, toàn bộ mạng trong chi nhánh mới đã có thể gi
         \caption{Chỉnh sửa file index.html trên ServerHTTP}
     \end{figure}
 \end{itemize}
+Mở PC1, PC2 và PC3, ta thêm địa chỉ IP của ServerDHCP/DNS vào mục DNS Server để các PC có thể phân giải tên miền.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{picture.png}
+    \caption{Thêm địa chỉ IP của ServerDHCP/DNS vào mục DNS Server trên PC1}
+\end{figure}
+Tương tự với PC2 và PC3.
+\newpage
 \subsubsection{\textbf{Cấu hình DHCP Relay Agent trên Router R4}}
 \textbf{Mô tả:} Cấu hình Relay Agent trên cổng GigabitEthernet0/0 để chuyển tiếp gói tin DHCP Discovery sang nhánh Server Farm (172.16.0.34).
 \begin{figure}[H]
